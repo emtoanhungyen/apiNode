@@ -23,7 +23,7 @@ mongoose.connect("mongodb://localhost:27017/apiAsm")
     .then(() => console.log("Ket noi db thanh cong"))
     .catch((error) => console.log(error));
 // connect
-const PORT = 8000;
+const PORT = 7000;
 app.listen(PORT, () => {
     console.log("Server của bạn đang chạy cổng ", PORT);
 });
