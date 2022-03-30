@@ -21,8 +21,10 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
+    "crypto": "^1.0.1",
     "express": "^4.17.3",
-    "mongoose": "^6.2.8"
+    "mongoose": "^6.2.8",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "cors": "^2.8.5",

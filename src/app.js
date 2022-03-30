@@ -4,6 +4,7 @@ import cors from "cors";
 import morgan from "morgan";
 import mongoose from "mongoose";
 import productRoute from "./routes/product";
+import userRoute from "./routes/user";
 // import userRoute from "./routes/user";
 // import newRoute from "./routes/new";
 // import categoryRoute from "./routes/category";
@@ -16,6 +17,7 @@ app.use(express.json());
 
 // routes
 app.use("/api", productRoute);
+app.use("/api", userRoute);
 
 
 // connection db
