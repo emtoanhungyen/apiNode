@@ -1,9 +1,10 @@
 import User from "../models/user";
-
+import toastr from "toastr";
 export const signup = async (req, res) => {
     try {
         const user = await new User(req.body).save();
         res.json(user);
+        toastr.success('Đăng ký thành công!');
     } catch (error) {
         res.status(400).json({
             error: "Đăng ký không thành công",
