@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid'
 // const { ObjectId } = mongoose.Types;
 
 const userSchema = new Schema({
-    nickname: {
+    name: {
         type: String,
         minLength: 5,
     },
