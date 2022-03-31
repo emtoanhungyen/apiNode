@@ -46,6 +46,7 @@ export const signin = async (req, res) => {
                 _id: user.id,
                 email: user.email,
                 name: user.name,
+                role: user.role
             },
         });
         console.log("Đăng nhập ok em ơi");
