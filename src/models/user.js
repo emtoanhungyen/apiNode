@@ -7,6 +7,7 @@ const userSchema = new Schema({
     name: {
         type: String,
         minLength: 5,
+        unique: true
     },
     email: {
         type: String,
@@ -17,18 +18,18 @@ const userSchema = new Schema({
         required: true,
         minlength: 4
     },
-    slat: {
+    salt: {
         type: String
     },
     role: {
         type: Number,
         default: 0
     }
-}, { timestamps: true });
+}, []);
 
 userSchema.pre("save", function(next){
     this.salt = uuidv4()
-    this.password = this.encryptPassword(this.password)
+    this.password = this.encryptPassword(this.password);
     next();
 });
 userSchema.methods = {
