@@ -47,7 +47,7 @@ export const signin = async (req, res) => {
                 email: user.email,
                 name: user.name,
                 role: user.role
-            },
+            }
         });
         console.log("Đăng nhập ok em ơi");
     } catch (error) {
