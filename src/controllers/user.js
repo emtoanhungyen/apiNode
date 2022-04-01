@@ -3,7 +3,7 @@ import toastr from "toastr";
 import jwt from 'jsonwebtoken';
 
 export const signup = async (req, res) => {
-    const { name, email, password } = req.body;
+    const { name, email, password, role } = req.body;
     try {
         const checkEmail = await User.findOne({ email }).exec();
         if (checkEmail) {
@@ -12,6 +12,7 @@ export const signup = async (req, res) => {
             })
         }
         const user = await new User(req.body).save();
+        
         res.json({
             user: {
                 name: user.name,
@@ -22,6 +23,16 @@ export const signup = async (req, res) => {
     } catch (error) {
         res.status(400).json({
             error: "Đăng ký không thành công",
+        });
+    }
+};
+export const getUser = async (req, res) => {
+    try {
+        const user = await User.findOne({ _id: req.params.id }).exec();
+        res.json(user);
+    } catch (error) {
+        res.status(400).json({
+            error: "Khong tim thay user",
         });
     }
 };
