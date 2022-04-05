@@ -13,6 +13,10 @@ const productSchema = new Schema({
         type: Number,
         required: true,
     },
+    details: {
+        type: String,
+        minlength: 5,
+    }
     // category: {
     //     type: ObjectId,
     //     ref: "Category",
