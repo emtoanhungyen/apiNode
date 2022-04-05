@@ -26,7 +26,7 @@ export const get = async (req, res) => {
         res.json(product);
     } catch (error) {
         res.status(400).json({
-            error: "Khong tim thay san pham",
+            error: "Không tìm thấy sản phẩm",
         });
     }
 };
@@ -36,7 +36,7 @@ export const remove = async (req, res) => {
         res.json(product);
     } catch (error) {
         res.status(400).json({
-            error: "Xoa san pham khong thanh cong",
+            error: "Xóa sản phẩm không thành công",
         });
     }
 };
@@ -48,7 +48,7 @@ export const update = async (req, res) => {
         res.json(product);
     } catch (error) {
         res.status(400).json({
-            error: "Update san pham khong thanh cong",
+            error: "Update sản phẩm không thành công",
         });
     }
 };
