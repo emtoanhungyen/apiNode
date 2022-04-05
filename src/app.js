@@ -5,9 +5,7 @@ import morgan from "morgan";
 import mongoose from "mongoose";
 import productRoute from "./routes/product";
 import userRoute from "./routes/user";
-// import userRoute from "./routes/user";
-// import newRoute from "./routes/new";
-// import categoryRoute from "./routes/category";
+import categoryRoute from "./routes/category"
 
 const app = express();
 // middleware
@@ -18,6 +16,7 @@ app.use(express.json());
 // routes
 app.use("/api", productRoute);
 app.use("/api", userRoute);
+app.use("/api", categoryRoute);
 
 
 // connection db
