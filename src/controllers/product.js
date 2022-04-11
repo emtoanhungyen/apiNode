@@ -12,7 +12,7 @@ export const create = async (req, res) => {
 };
 export const list = async (req, res) => {
     try {
-        const product = await Product.find({}).exec();
+        const product = await Product.find().exec();
         res.json(product);
     } catch (error) {
         res.status(400).json({

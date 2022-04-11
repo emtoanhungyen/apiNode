@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 import productRoute from "./routes/product";
 import userRoute from "./routes/user";
 import categoryRoute from "./routes/category"
+import cartRoute from "./routes/cart";
 
 const app = express();
 // middleware
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use("/api", productRoute);
 app.use("/api", userRoute);
 app.use("/api", categoryRoute);
+app.use("/api", cartRoute);
 
 
 // connection db

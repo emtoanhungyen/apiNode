@@ -16,9 +16,9 @@ export const get = async (req, res) => {
     const condition = {_id: req.params.id }
     try {
         const category = await Category.findOne(condition).exec();
-        const products = await Product.find({category: category._id}).select('-category').exec();
+        const products = await Product.find({category}).exec();
         res.json({
-            category,products
+            category, products
         });
     } catch (error) {
         res.status(400).json({
@@ -29,7 +29,7 @@ export const get = async (req, res) => {
 
 export const list = async (req, res) => {
     try {
-        const category = await Category.find({}).exec();
+        const category = await Category.find().exec();
         res.json(category);
     } catch (error) {
         res.status(400).json({
