@@ -3,7 +3,7 @@ import {
     create, get, list, remove, update,
 } from "../controllers/product";
 import { userById } from "../controllers/user";
-import { checkAuth, isAuth, requiredSigin } from "../middlewares/checkAuth";
+import { checkAuth,  requiredSigin } from "../middlewares/checkAuth";
 
 const router = Router();
 
