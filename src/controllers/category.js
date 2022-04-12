@@ -18,7 +18,8 @@ export const get = async (req, res) => {
         const category = await Category.findOne(condition).exec();
         const products = await Product.find({category}).exec();
         res.json({
-            category, products
+            // category,
+            products
         });
     } catch (error) {
         res.status(400).json({

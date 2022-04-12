@@ -26,6 +26,16 @@ export const signup = async (req, res) => {
         });
     }
 };
+export const listUser = async (req, res) => {
+    try {
+        const user = await User.find().exec();
+        res.json(user);
+    } catch (error) {
+        res.status(400).json({
+            error: "Khong tim thay san pham",
+        });
+    }
+};
 export const getUser = async (req, res) => {
     try {
         const user = await User.findOne({ _id: req.params.id }).exec();
@@ -64,6 +74,16 @@ export const signin = async (req, res) => {
     } catch (error) {
         res.status(400).json({
             message: "Đăng nhập thất bại",
+        });
+    }
+};
+export const remove = async (req, res) => {
+    try {
+        const user = await User.findOneAndDelete({ _id: req.params.id }).exec();
+        res.json(user);
+    } catch (error) {
+        res.status(400).json({
+            error: "Xóa user không thành công",
         });
     }
 };
