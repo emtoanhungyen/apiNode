@@ -54,3 +54,11 @@ export const update = async (req, res) => {
         });
     }
 };
+
+export const search = async(req, res) => {
+    console.log(req.query);
+    const searchString = req.query.q ? req.query.q : "";
+
+    const result = await Product.find({ $text: { $search: searchString } }).exec();
+    res.json(result)
+}
