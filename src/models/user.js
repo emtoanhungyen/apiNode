@@ -28,7 +28,7 @@ const userSchema = new Schema({
 }, []);
 
 userSchema.pre("save", function(next){
-    this.salt = uuidv4()
+    this.salt = uuidv4();
     this.password = this.encryptPassword(this.password);
     next();
 });
